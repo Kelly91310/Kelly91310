@@ -1,0 +1,84 @@
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { FaRegCalendarAlt, FaRegCheckCircle, FaUser } from "react-icons/fa";
+import { motion } from "framer-motion";
+
+export default function Home() {
+  return (
+    <div className="p-6 max-w-4xl mx-auto">
+      {/* Header */}
+      <motion.h1
+        className="text-3xl font-bold text-center mb-4"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+      >
+        Simplifiez votre gestion, optimisez vos résultats
+      </motion.h1>
+      <p className="text-center text-gray-600 mb-6">
+        Gagnez du temps avec notre accompagnement administratif et financier.
+      </p>
+      <div className="flex justify-center">
+        <Button className="bg-blue-600 text-white px-6 py-2 rounded-lg">
+          Découvrez nos services
+        </Button>
+      </div>
+
+      {/* About Section */}
+      <div className="mt-12 bg-gray-50 p-6 rounded-lg">
+        <h2 className="text-2xl font-semibold mb-4">À propos de nous</h2>
+        <p className="text-gray-600">
+          Nous accompagnons particuliers et professionnels dans la gestion administrative et financière,
+          avec des solutions sur-mesure adaptées à vos besoins.
+        </p>
+      </div>
+
+      {/* Services Section */}
+      <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <Card>
+          <CardContent className="p-4">
+            <FaRegCheckCircle className="text-blue-600 text-3xl mb-2" />
+            <h2 className="text-xl font-semibold mb-2">Gestion Administrative</h2>
+            <p className="text-gray-600 text-sm">
+              Simplification des démarches, gestion de documents et suivi administratif.
+            </p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="p-4">
+            <FaRegCheckCircle className="text-blue-600 text-3xl mb-2" />
+            <h2 className="text-xl font-semibold mb-2">Coaching Budgétaire</h2>
+            <p className="text-gray-600 text-sm">
+              Analyse financière et conseils pour optimiser votre budget.
+            </p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="p-4">
+            <FaRegCheckCircle className="text-blue-600 text-3xl mb-2" />
+            <h2 className="text-xl font-semibold mb-2">Optimisation Financière</h2>
+            <p className="text-gray-600 text-sm">
+              Stratégies et outils pour améliorer la gestion de vos finances.
+            </p>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* Testimonials Section */}
+      <div className="mt-12 bg-gray-50 p-6 rounded-lg">
+        <h2 className="text-2xl font-semibold mb-4">Ce que disent nos clients</h2>
+        <p className="italic text-gray-600">"Un service efficace et une équipe à l'écoute ! Grâce à leur expertise, j'ai pu structurer ma comptabilité." - Sophie M.</p>
+      </div>
+
+      {/* Contact Section */}
+      <div className="mt-12 bg-gray-100 p-6 rounded-lg">
+        <h2 className="text-2xl font-semibold mb-4">Contactez-nous</h2>
+        <div className="space-y-4">
+          <Input placeholder="Votre nom" />
+          <Input placeholder="Votre email" type="email" />
+          <Textarea placeholder="Votre message" />
+          <Button className="bg-blue-600 text-white w-full">Envoyer</Button>
+        </div>
+      </div>
+    </div>
